@@ -1,0 +1,247 @@
+{
+  "tools": [
+    {
+      "name": "schedule_search",
+      "description": "Найдите занятия по тексту и, при необходимости, дате. Когда не использовать: если уже известен точный event_id — вызовите schedule_get; для свободной аудитории вызовите schedule_room_availability.",
+      "inputSchema": {
+        "type": "object",
+        "$defs": {
+          "ResponseFormat": {
+            "description": "Controls how much schedule data is returned.",
+            "enum": [
+              "concise",
+              "detailed"
+            ],
+            "title": "ResponseFormat",
+            "type": "string"
+          },
+          "ScheduleHandle": {
+            "description": "Explicit handle for the demo schedule dataset.",
+            "enum": [
+              "demo-autumn-2026"
+            ],
+            "title": "ScheduleHandle",
+            "type": "string"
+          }
+        },
+        "properties": {
+          "schedule_handle": {
+            "$ref": "#/$defs/ScheduleHandle",
+            "description": "Явный handle набора расписания; передавайте demo-autumn-2026 для учебной фикстуры."
+          },
+          "query": {
+            "description": "Непустой текст для поиска в названии, курсе, преподавателе, аудитории или корпусе; не используйте вместо точного event_id.",
+            "minLength": 1,
+            "title": "Query",
+            "type": "string"
+          },
+          "date": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Необязательный фильтр даты в формате YYYY-MM-DD; не указывайте здесь время занятия.",
+            "title": "Date"
+          },
+          "response_format": {
+            "$ref": "#/$defs/ResponseFormat",
+            "default": "concise",
+            "description": "concise для краткого списка; detailed — когда нужны все поля и источник записи."
+          }
+        },
+        "required": [
+          "schedule_handle",
+          "query"
+        ],
+        "title": "schedule_searchArguments",
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "schedule_get",
+      "description": "Получите одну запись занятия по точному идентификатору. Когда не использовать: для поиска по теме или преподавателю используйте schedule_search или schedule_by_teacher.",
+      "inputSchema": {
+        "type": "object",
+        "$defs": {
+          "ResponseFormat": {
+            "description": "Controls how much schedule data is returned.",
+            "enum": [
+              "concise",
+              "detailed"
+            ],
+            "title": "ResponseFormat",
+            "type": "string"
+          },
+          "ScheduleHandle": {
+            "description": "Explicit handle for the demo schedule dataset.",
+            "enum": [
+              "demo-autumn-2026"
+            ],
+            "title": "ScheduleHandle",
+            "type": "string"
+          }
+        },
+        "properties": {
+          "schedule_handle": {
+            "$ref": "#/$defs/ScheduleHandle",
+            "description": "Явный handle набора расписания; передавайте demo-autumn-2026 для учебной фикстуры."
+          },
+          "event_id": {
+            "description": "Точный идентификатор события, полученный из schedule_search; не передавайте название занятия вместо ID.",
+            "minLength": 1,
+            "title": "Event Id",
+            "type": "string"
+          },
+          "response_format": {
+            "$ref": "#/$defs/ResponseFormat",
+            "default": "detailed",
+            "description": "concise для основных полей; detailed — когда нужны преподаватель, курс, корпус и источник."
+          }
+        },
+        "required": [
+          "schedule_handle",
+          "event_id"
+        ],
+        "title": "schedule_getArguments",
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "schedule_by_teacher",
+      "description": "Найдите занятия преподавателя. Когда не использовать: для поиска по названию или аудитории используйте schedule_search; для конкретного события по ID используйте schedule_get.",
+      "inputSchema": {
+        "type": "object",
+        "$defs": {
+          "ResponseFormat": {
+            "description": "Controls how much schedule data is returned.",
+            "enum": [
+              "concise",
+              "detailed"
+            ],
+            "title": "ResponseFormat",
+            "type": "string"
+          },
+          "ScheduleHandle": {
+            "description": "Explicit handle for the demo schedule dataset.",
+            "enum": [
+              "demo-autumn-2026"
+            ],
+            "title": "ScheduleHandle",
+            "type": "string"
+          }
+        },
+        "properties": {
+          "schedule_handle": {
+            "$ref": "#/$defs/ScheduleHandle",
+            "description": "Явный handle набора расписания; передавайте demo-autumn-2026 для учебной фикстуры."
+          },
+          "teacher": {
+            "description": "Имя или часть имени преподавателя; не используйте для поиска по названию курса.",
+            "minLength": 1,
+            "title": "Teacher",
+            "type": "string"
+          },
+          "date": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Необязательная дата в формате YYYY-MM-DD; не задавайте диапазон этим полем.",
+            "title": "Date"
+          },
+          "response_format": {
+            "$ref": "#/$defs/ResponseFormat",
+            "default": "concise",
+            "description": "concise для краткого списка; detailed — когда нужны все поля и источники записей."
+          }
+        },
+        "required": [
+          "schedule_handle",
+          "teacher"
+        ],
+        "title": "schedule_by_teacherArguments",
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "schedule_room_availability",
+      "description": "Проверьте, занята ли аудитория в указанном интервале. Когда не использовать: для просмотра всех занятий комнаты или поиска курса используйте schedule_search.",
+      "inputSchema": {
+        "type": "object",
+        "$defs": {
+          "ResponseFormat": {
+            "description": "Controls how much schedule data is returned.",
+            "enum": [
+              "concise",
+              "detailed"
+            ],
+            "title": "ResponseFormat",
+            "type": "string"
+          },
+          "ScheduleHandle": {
+            "description": "Explicit handle for the demo schedule dataset.",
+            "enum": [
+              "demo-autumn-2026"
+            ],
+            "title": "ScheduleHandle",
+            "type": "string"
+          }
+        },
+        "properties": {
+          "schedule_handle": {
+            "$ref": "#/$defs/ScheduleHandle",
+            "description": "Явный handle набора расписания; передавайте demo-autumn-2026 для учебной фикстуры."
+          },
+          "date": {
+            "description": "Дата проверки в формате YYYY-MM-DD; не передавайте диапазон дат.",
+            "minLength": 1,
+            "title": "Date",
+            "type": "string"
+          },
+          "room": {
+            "description": "Точный номер или обозначение аудитории; для поиска по корпусу используйте schedule_search.",
+            "minLength": 1,
+            "title": "Room",
+            "type": "string"
+          },
+          "start_time": {
+            "description": "Начало проверяемого интервала в местном времени, формате HH:MM.",
+            "minLength": 1,
+            "title": "Start Time",
+            "type": "string"
+          },
+          "duration_minutes": {
+            "description": "Длительность интервала в минутах; должна быть положительным числом.",
+            "exclusiveMinimum": 0,
+            "title": "Duration Minutes",
+            "type": "integer"
+          },
+          "response_format": {
+            "$ref": "#/$defs/ResponseFormat",
+            "default": "concise",
+            "description": "concise для статуса занятости; detailed — когда нужны конфликтующие события и их источники."
+          }
+        },
+        "required": [
+          "schedule_handle",
+          "date",
+          "room",
+          "start_time",
+          "duration_minutes"
+        ],
+        "title": "schedule_room_availabilityArguments",
+        "additionalProperties": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+﻿condition,episodes_expected,episodes_logged,failed_or_incomplete,valid_episodes,evaluable,loop_episodes,loop_rate,mean_tool_steps,mean_total_tokens,successes,success_rate,guard_stops,three_identical,ABAB,runtime_failures,max_steps_episodes
+unstable_no_guard,60,60,0,60,True,7,0.11666666666666667,1.85,603.3333333333334,59,0.9833333333333333,0,7,0,0,0
+unstable_loopguard,60,60,0,60,True,7,0.11666666666666667,1.7833333333333334,543.15,53,0.8833333333333333,7,7,0,0,0
+hint_no_guard,60,60,0,60,True,1,0.016666666666666666,1.8666666666666667,629.7333333333333,60,1.0,0,1,0,0,0

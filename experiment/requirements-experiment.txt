@@ -1,0 +1,8 @@
+# Local Qwen3-4B + embedding-model runtime; no API clients are required.
+torch>=2.6
+transformers>=4.51.2,<5
+accelerate>=1.6
+tokenizers>=0.20
+matplotlib>=3.8
+reportlab>=4.2
+pdfplumber>=0.11

@@ -1,0 +1,152 @@
+[
+  {
+    "id": "q01",
+    "query": "What class is in room 204 on October 12?",
+    "gold_tool": "schedule_search"
+  },
+  {
+    "id": "q02",
+    "query": "Find the lesson about MCP on October 15.",
+    "gold_tool": "schedule_search"
+  },
+  {
+    "id": "q03",
+    "query": "Search the timetable for the agents course.",
+    "gold_tool": "schedule_search"
+  },
+  {
+    "id": "q04",
+    "query": "Which class is taught by A. Ivanova in room 204?",
+    "gold_tool": "schedule_search"
+  },
+  {
+    "id": "q05",
+    "query": "Look up the seminar about tools on October 13.",
+    "gold_tool": "schedule_search"
+  },
+  {
+    "id": "q06",
+    "query": "Find classes in the Main Building that mention agents.",
+    "gold_tool": "schedule_search"
+  },
+  {
+    "id": "q07",
+    "query": "Show the lesson matching the room number 314.",
+    "gold_tool": "schedule_search"
+  },
+  {
+    "id": "q08",
+    "query": "Retrieve the full record for event class-001.",
+    "gold_tool": "schedule_get"
+  },
+  {
+    "id": "q09",
+    "query": "What are all fields and source details for class-003?",
+    "gold_tool": "schedule_get"
+  },
+  {
+    "id": "q10",
+    "query": "Get the lesson whose event ID is class-002.",
+    "gold_tool": "schedule_get"
+  },
+  {
+    "id": "q11",
+    "query": "Open event class-001 and show its teacher and building.",
+    "gold_tool": "schedule_get"
+  },
+  {
+    "id": "q12",
+    "query": "Fetch the exact schedule record for class-003.",
+    "gold_tool": "schedule_get"
+  },
+  {
+    "id": "q13",
+    "query": "Return the detailed entry identified by class-002.",
+    "gold_tool": "schedule_get"
+  },
+  {
+    "id": "q14",
+    "query": "I have ID class-001; retrieve that event.",
+    "gold_tool": "schedule_get"
+  },
+  {
+    "id": "q15",
+    "query": "When does A. Ivanova teach?",
+    "gold_tool": "schedule_by_teacher"
+  },
+  {
+    "id": "q16",
+    "query": "Find all lessons for I. Petrov.",
+    "gold_tool": "schedule_by_teacher"
+  },
+  {
+    "id": "q17",
+    "query": "Show classes taught by Ivanova on October 15.",
+    "gold_tool": "schedule_by_teacher"
+  },
+  {
+    "id": "q18",
+    "query": "Which dates have a lesson with Petrov?",
+    "gold_tool": "schedule_by_teacher"
+  },
+  {
+    "id": "q19",
+    "query": "Look up the timetable for teacher A. Ivanova.",
+    "gold_tool": "schedule_by_teacher"
+  },
+  {
+    "id": "q20",
+    "query": "Find what I. Petrov teaches on October 13.",
+    "gold_tool": "schedule_by_teacher"
+  },
+  {
+    "id": "q21",
+    "query": "List sessions led by Ivanova, regardless of room.",
+    "gold_tool": "schedule_by_teacher"
+  },
+  {
+    "id": "q22",
+    "query": "Is room 204 free from 18:15 for thirty minutes on October 12?",
+    "gold_tool": "schedule_room_availability"
+  },
+  {
+    "id": "q23",
+    "query": "Check if classroom 314 is available at 18:00 on October 13 for 45 minutes.",
+    "gold_tool": "schedule_room_availability"
+  },
+  {
+    "id": "q24",
+    "query": "Can I use room 204 at 20:00 on October 15 for one hour?",
+    "gold_tool": "schedule_room_availability"
+  },
+  {
+    "id": "q25",
+    "query": "Check availability for room 101 on October 12, 16:00-17:00.",
+    "gold_tool": "schedule_room_availability"
+  },
+  {
+    "id": "q26",
+    "query": "Will room 204 be occupied at 18:30 on October 12 for 20 minutes?",
+    "gold_tool": "schedule_room_availability"
+  },
+  {
+    "id": "q27",
+    "query": "Is classroom 314 vacant from 20:00 for half an hour on October 13?",
+    "gold_tool": "schedule_room_availability"
+  },
+  {
+    "id": "q28",
+    "query": "Test whether room 204 is free at 17:00 on October 15 for 30 minutes.",
+    "gold_tool": "schedule_room_availability"
+  },
+  {
+    "id": "q29",
+    "query": "Can a meeting use room 204 at 19:00 on October 12 for 15 minutes?",
+    "gold_tool": "schedule_room_availability"
+  },
+  {
+    "id": "q30",
+    "query": "Check the room's occupancy for October 13 at 18:15, duration 30 minutes, room 314.",
+    "gold_tool": "schedule_room_availability"
+  }
+]

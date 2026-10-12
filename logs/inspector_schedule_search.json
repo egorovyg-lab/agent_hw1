@@ -1,0 +1,15 @@
+{
+  "_meta": {
+    "io.modelcontextprotocol/serverInfo": {
+      "name": "lesson-schedule",
+      "version": "1.0.0"
+    }
+  },
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"events\": [\n    {\n      \"event_id\": \"class-001\",\n      \"date\": \"2026-10-12\",\n      \"start_time\": \"18:00\",\n      \"end_time\": \"19:30\",\n      \"title\": \"Практикум по агентам\",\n      \"room\": \"204\"\n    }\n  ]\n}"
+    }
+  ],
+  "isError": false
+}

@@ -1,0 +1,15 @@
+{
+  "_meta": {
+    "io.modelcontextprotocol/serverInfo": {
+      "name": "lesson-schedule",
+      "version": "1.0.0"
+    }
+  },
+  "content": [
+    {
+      "type": "text",
+      "text": "Error executing tool schedule_get: Событие 'missing-id' не найдено. Сначала вызовите schedule_search и скопируйте event_id из результата."
+    }
+  ],
+  "isError": true
+}

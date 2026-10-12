@@ -1,0 +1,502 @@
+[
+  {
+    "name": "schedule_search",
+    "description": "Search lesson schedule by text across lesson title, course, teacher, room, and optional date. Use when the user asks what class matches a topic, room, or name; do not use for a known event ID or room availability.",
+    "kind": "gold"
+  },
+  {
+    "name": "schedule_get",
+    "description": "Retrieve one lesson by exact event ID, including date, time, title, room, teacher, course, building, and source. Use after an ID is known; do not use for a free-text search.",
+    "kind": "gold"
+  },
+  {
+    "name": "schedule_by_teacher",
+    "description": "Find lessons by teacher name and optional date. Use when the user asks when or what a teacher teaches; do not use to search a room or course title.",
+    "kind": "gold"
+  },
+  {
+    "name": "schedule_room_availability",
+    "description": "Check whether a room is free for a date, start time, and duration. Use for a time interval availability question; do not use to list all room classes.",
+    "kind": "gold"
+  },
+  {
+    "name": "schedule_course_search",
+    "description": "Search course catalog descriptions by course title and subject; returns course metadata, not individual lesson times.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_room_list",
+    "description": "List all lessons assigned to a room over a date range; use for room history rather than checking a free interval.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_teacher_profile",
+    "description": "Return a teacher's office, contact details, and biography; does not show their lessons.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_event_create",
+    "description": "Create a new calendar event from a title and time; modifies a personal calendar, not the class schedule.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_event_cancel",
+    "description": "Cancel a personal calendar event by event ID; does not search or read course records.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_exam_search",
+    "description": "Search exam dates and locations by subject; excludes ordinary lessons and seminars.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_deadline_search",
+    "description": "Find assignment due dates by course; does not return class meeting times.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_building_map",
+    "description": "Find a building and room on a campus map; does not report whether the room is occupied.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_room_capacity",
+    "description": "Return the seating capacity and equipment of a room; does not check its schedule.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_teacher_hours",
+    "description": "Find teacher office hours by teacher name; do not use for teaching timetable.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_student_calendar",
+    "description": "List a student's enrolled classes using student ID; differs from querying the global timetable.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_group_calendar",
+    "description": "List meetings for a study group; does not return official lessons.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_time_convert",
+    "description": "Convert a time between time zones; does not search lesson records.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_date_week",
+    "description": "Return the week number and weekday for a date; no schedule lookup.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_conflict_check",
+    "description": "Compare two supplied events for overlap; does not search for the schedule itself.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_substitute_teacher",
+    "description": "Find the substitute assigned to a class; does not list the teacher's full timetable.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_attendance",
+    "description": "Read attendance for a class event ID; does not return event details or availability.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_room_reserve",
+    "description": "Reserve a room for a requested interval; this changes state and is not a read-only availability check.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_notice_search",
+    "description": "Search announcements about timetable changes; does not return the base timetable.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_export_ical",
+    "description": "Export a calendar in iCalendar format for a known user; does not answer a schedule question.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_course_roster",
+    "description": "List students enrolled in a course; no meeting dates or room information.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_semester_dates",
+    "description": "Return semester start, end, and holidays; does not locate a class meeting.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_room_equipment",
+    "description": "Return available equipment in a classroom; no occupancy or lesson records.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "schedule_change_request",
+    "description": "Submit a request to change a class time or room; this creates a request rather than searching.",
+    "kind": "near_distractor"
+  },
+  {
+    "name": "weather_current",
+    "description": "Query weather conditions, forecasts, alerts, or atmospheric measurements for a location and time. This operation is `weather_current`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "weather_forecast",
+    "description": "Query weather conditions, forecasts, alerts, or atmospheric measurements for a location and time. This operation is `weather_forecast`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "weather_alerts",
+    "description": "Query weather conditions, forecasts, alerts, or atmospheric measurements for a location and time. This operation is `weather_alerts`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "weather_history",
+    "description": "Query weather conditions, forecasts, alerts, or atmospheric measurements for a location and time. This operation is `weather_history`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "weather_air_quality",
+    "description": "Query weather conditions, forecasts, alerts, or atmospheric measurements for a location and time. This operation is `weather_air_quality`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "weather_uv_index",
+    "description": "Query weather conditions, forecasts, alerts, or atmospheric measurements for a location and time. This operation is `weather_uv_index`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "weather_sunrise_sunset",
+    "description": "Query weather conditions, forecasts, alerts, or atmospheric measurements for a location and time. This operation is `weather_sunrise_sunset`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "weather_rain_probability",
+    "description": "Query weather conditions, forecasts, alerts, or atmospheric measurements for a location and time. This operation is `weather_rain_probability`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "weather_wind",
+    "description": "Query weather conditions, forecasts, alerts, or atmospheric measurements for a location and time. This operation is `weather_wind`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "weather_location_lookup",
+    "description": "Query weather conditions, forecasts, alerts, or atmospheric measurements for a location and time. This operation is `weather_location_lookup`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "weather_hourly",
+    "description": "Query weather conditions, forecasts, alerts, or atmospheric measurements for a location and time. This operation is `weather_hourly`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "weather_compare",
+    "description": "Query weather conditions, forecasts, alerts, or atmospheric measurements for a location and time. This operation is `weather_compare`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "email_search",
+    "description": "Search, read, compose, send, organize, or manage email messages and contacts. This operation is `email_search`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "email_get",
+    "description": "Search, read, compose, send, organize, or manage email messages and contacts. This operation is `email_get`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "email_send",
+    "description": "Search, read, compose, send, organize, or manage email messages and contacts. This operation is `email_send`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "email_draft",
+    "description": "Search, read, compose, send, organize, or manage email messages and contacts. This operation is `email_draft`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "email_archive",
+    "description": "Search, read, compose, send, organize, or manage email messages and contacts. This operation is `email_archive`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "email_label",
+    "description": "Search, read, compose, send, organize, or manage email messages and contacts. This operation is `email_label`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "email_attachment_list",
+    "description": "Search, read, compose, send, organize, or manage email messages and contacts. This operation is `email_attachment_list`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "email_unread_count",
+    "description": "Search, read, compose, send, organize, or manage email messages and contacts. This operation is `email_unread_count`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "email_thread_reply",
+    "description": "Search, read, compose, send, organize, or manage email messages and contacts. This operation is `email_thread_reply`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "email_spam_report",
+    "description": "Search, read, compose, send, organize, or manage email messages and contacts. This operation is `email_spam_report`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "email_contact_lookup",
+    "description": "Search, read, compose, send, organize, or manage email messages and contacts. This operation is `email_contact_lookup`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "email_delete",
+    "description": "Search, read, compose, send, organize, or manage email messages and contacts. This operation is `email_delete`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "expense_search",
+    "description": "Search, record, classify, approve, reimburse, or report business expenses and receipts. This operation is `expense_search`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "expense_create",
+    "description": "Search, record, classify, approve, reimburse, or report business expenses and receipts. This operation is `expense_create`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "expense_receipt_read",
+    "description": "Search, record, classify, approve, reimburse, or report business expenses and receipts. This operation is `expense_receipt_read`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "expense_category_summary",
+    "description": "Search, record, classify, approve, reimburse, or report business expenses and receipts. This operation is `expense_category_summary`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "expense_budget_check",
+    "description": "Search, record, classify, approve, reimburse, or report business expenses and receipts. This operation is `expense_budget_check`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "expense_reimburse",
+    "description": "Search, record, classify, approve, reimburse, or report business expenses and receipts. This operation is `expense_reimburse`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "expense_vendor_lookup",
+    "description": "Search, record, classify, approve, reimburse, or report business expenses and receipts. This operation is `expense_vendor_lookup`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "expense_monthly_report",
+    "description": "Search, record, classify, approve, reimburse, or report business expenses and receipts. This operation is `expense_monthly_report`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "expense_currency_convert",
+    "description": "Search, record, classify, approve, reimburse, or report business expenses and receipts. This operation is `expense_currency_convert`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "expense_policy_search",
+    "description": "Search, record, classify, approve, reimburse, or report business expenses and receipts. This operation is `expense_policy_search`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "expense_export",
+    "description": "Search, record, classify, approve, reimburse, or report business expenses and receipts. This operation is `expense_export`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "expense_approve",
+    "description": "Search, record, classify, approve, reimburse, or report business expenses and receipts. This operation is `expense_approve`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "file_search",
+    "description": "Search, read, upload, share, organize, summarize, or manage files and folders. This operation is `file_search`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "file_get",
+    "description": "Search, read, upload, share, organize, summarize, or manage files and folders. This operation is `file_get`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "file_upload",
+    "description": "Search, read, upload, share, organize, summarize, or manage files and folders. This operation is `file_upload`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "file_share",
+    "description": "Search, read, upload, share, organize, summarize, or manage files and folders. This operation is `file_share`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "file_permissions",
+    "description": "Search, read, upload, share, organize, summarize, or manage files and folders. This operation is `file_permissions`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "file_move",
+    "description": "Search, read, upload, share, organize, summarize, or manage files and folders. This operation is `file_move`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "file_version_list",
+    "description": "Search, read, upload, share, organize, summarize, or manage files and folders. This operation is `file_version_list`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "file_delete",
+    "description": "Search, read, upload, share, organize, summarize, or manage files and folders. This operation is `file_delete`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "file_tag",
+    "description": "Search, read, upload, share, organize, summarize, or manage files and folders. This operation is `file_tag`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "file_summarize",
+    "description": "Search, read, upload, share, organize, summarize, or manage files and folders. This operation is `file_summarize`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "file_duplicate_check",
+    "description": "Search, read, upload, share, organize, summarize, or manage files and folders. This operation is `file_duplicate_check`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "file_folder_list",
+    "description": "Search, read, upload, share, organize, summarize, or manage files and folders. This operation is `file_folder_list`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "travel_flight_search",
+    "description": "Search, compare, retrieve, or manage flights, hotels, ground transport, and travel plans. This operation is `travel_flight_search`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "travel_hotel_search",
+    "description": "Search, compare, retrieve, or manage flights, hotels, ground transport, and travel plans. This operation is `travel_hotel_search`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "travel_itinerary_get",
+    "description": "Search, compare, retrieve, or manage flights, hotels, ground transport, and travel plans. This operation is `travel_itinerary_get`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "travel_booking_cancel",
+    "description": "Search, compare, retrieve, or manage flights, hotels, ground transport, and travel plans. This operation is `travel_booking_cancel`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "travel_checkin",
+    "description": "Search, compare, retrieve, or manage flights, hotels, ground transport, and travel plans. This operation is `travel_checkin`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "travel_price_alert",
+    "description": "Search, compare, retrieve, or manage flights, hotels, ground transport, and travel plans. This operation is `travel_price_alert`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "travel_route_plan",
+    "description": "Search, compare, retrieve, or manage flights, hotels, ground transport, and travel plans. This operation is `travel_route_plan`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "travel_train_search",
+    "description": "Search, compare, retrieve, or manage flights, hotels, ground transport, and travel plans. This operation is `travel_train_search`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "travel_car_rental",
+    "description": "Search, compare, retrieve, or manage flights, hotels, ground transport, and travel plans. This operation is `travel_car_rental`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "travel_policy_lookup",
+    "description": "Search, compare, retrieve, or manage flights, hotels, ground transport, and travel plans. This operation is `travel_policy_lookup`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "travel_expense_estimate",
+    "description": "Search, compare, retrieve, or manage flights, hotels, ground transport, and travel plans. This operation is `travel_expense_estimate`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "travel_booking_create",
+    "description": "Search, compare, retrieve, or manage flights, hotels, ground transport, and travel plans. This operation is `travel_booking_create`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "task_search",
+    "description": "Search, create, update, assign, complete, or report project tasks and due dates. This operation is `task_search`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "task_create",
+    "description": "Search, create, update, assign, complete, or report project tasks and due dates. This operation is `task_create`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "task_update",
+    "description": "Search, create, update, assign, complete, or report project tasks and due dates. This operation is `task_update`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "task_due_soon",
+    "description": "Search, create, update, assign, complete, or report project tasks and due dates. This operation is `task_due_soon`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "task_assign",
+    "description": "Search, create, update, assign, complete, or report project tasks and due dates. This operation is `task_assign`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "task_complete",
+    "description": "Search, create, update, assign, complete, or report project tasks and due dates. This operation is `task_complete`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "task_board_summary",
+    "description": "Search, create, update, assign, complete, or report project tasks and due dates. This operation is `task_board_summary`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "task_dependency_check",
+    "description": "Search, create, update, assign, complete, or report project tasks and due dates. This operation is `task_dependency_check`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "task_comment_add",
+    "description": "Search, create, update, assign, complete, or report project tasks and due dates. This operation is `task_comment_add`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "task_priority_set",
+    "description": "Search, create, update, assign, complete, or report project tasks and due dates. This operation is `task_priority_set`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "task_project_list",
+    "description": "Search, create, update, assign, complete, or report project tasks and due dates. This operation is `task_project_list`.",
+    "kind": "distractor"
+  },
+  {
+    "name": "task_delete",
+    "description": "Search, create, update, assign, complete, or report project tasks and due dates. This operation is `task_delete`.",
+    "kind": "distractor"
+  }
+]
